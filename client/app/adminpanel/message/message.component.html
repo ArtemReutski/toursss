@@ -1,0 +1,56 @@
+<navigation></navigation>   
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="container">
+        <h2>Сообщения</h2>
+        <p><strong>Описание:</strong> Сообщения с формы обратной связи</p>
+        <div id="accordion">
+          <div class="card">
+            <div class="card-header">
+              <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                Все сообщения
+              </a>
+            </div>
+            <div id="collapseOne" class="collapse show" data-parent="#accordion">
+              <div class="card-body">
+                    <li *ngFor="let message of messages">
+                            {{message.name}} ({{message.phone}}) - {{message.textMessage}}
+                            - <a (click)="deleteMessage(message._id)">Delete</a>
+                        </li>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+              Новые сообщения
+            </a>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                  <li *ngFor="let newMessage of newMessages">
+                      {{newMessage.name}} ({{newMessage.phone}}) - {{newMessage.textMessage}}
+                      - <a (click)="deleteMessage(newMessage._id)">Delete</a>
+                  </li> 
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                Старые сообщения
+              </a>
+            </div>
+            <div id="collapseThree" class="collapse" data-parent="#accordion">
+              <div class="card-body">
+                  <li *ngFor="let oldMessage of oldMessages">
+                      {{oldMessage.name}} ({{oldMessage.phone}}) - {{oldMessage.textMessage}}
+                      - <a (click)="deleteMessage(newMessage._id)">Delete</a>
+                  </li> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

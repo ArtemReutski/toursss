@@ -1,0 +1,28 @@
+<navigation></navigation>
+<div class="content-wrapper">
+    <div class="container">
+        <h2>Списки дел</h2>
+        <div id="accordion">
+
+            <div class="card" *ngFor="let list of lists">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#{{list.listTitle}}">
+                        {{list.listTitle}} 
+                    </a>
+                    <i (click)="deleteList(list._id)">Удалить</i>
+                </div>
+                <div id="{{list.listTitle}}" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <div *ngFor="let task of list.tasks">
+                            <div class="card card-task">
+                                <div class="card-header">{{task.taskName}}</div>
+                                <div class="card-body">{{task.taskDescrition}}</div> 
+                                <div class="card-footer">{{task.date}}</div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

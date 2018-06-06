@@ -1,0 +1,59 @@
+<navigation></navigation>
+<div class="content-wrapper">
+    <div class="container">
+        <div class="col-lg-12">
+            <form name="form" (ngSubmit)="f.form.valid && createTodo()" #f="ngForm" novalidate>
+                <div class="form-group">
+                    <label for="listTitle">Название списка</label>
+                    <input type="text" class="form-control" name="listTitle" [(ngModel)]="model.listTitle" #listTitle="ngModel" required />
+                    <div *ngIf="f.submitted && !listTitle.valid" class="help-block">First Name is required</div>
+                </div>
+                <!-- <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !lastName.valid }">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" required />
+                    <div *ngIf="f.submitted && !lastName.valid" class="help-block">Last Name is required</div>
+                </div> -->
+                <div class="form-group">
+                    <button [disabled]="loading" class="btn btn-primary">Создать</button>
+                </div>
+            </form>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Добавить задачу</button>
+            <!-- The Modal -->
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Введите задачу</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <form name="form1">
+                                <div class="form-group">
+                                    <label for="createListTitle1">Название списка</label>
+                                    <input type="text" class="form-control" name="createListTitle" [(ngModel)]="createListTitle" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="taskName">Нзвание задачи</label>
+                                    <input type="text" class="form-control" name="taskName" [(ngModel)]="taskName" required />
+                                </div>
+                                <div class="form-group">
+                                    <label for="taskDescrition">Описание задачи</label>
+                                    <input type="text" class="form-control" name="taskDescrition" [(ngModel)]="taskDescrition" 
+                                        required />
+                                </div>
+                                
+                                <div class="form-group">
+                                    <button data-dismiss="modal" class="btn btn-primary" (click)="createTask(createListTitle)">Создать</button>
+                                </div>
+                            </form>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
