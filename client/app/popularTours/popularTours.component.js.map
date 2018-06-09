@@ -1,1 +1,0 @@
-{"version":3,"file":"popularTours.component.js","sourceRoot":"","sources":["popularTours.component.ts"],"names":[],"mappings":";;;;;;;;AAAA,sCAAkD;AASlD;IAAA;IAEA,CAAC;IAFY,qBAAqB;QAPjC,gBAAS,CAAC;YACP,QAAQ,EAAE,cAAc;YACxB,QAAQ,EAAE,MAAM,CAAC,EAAE;YACnB,WAAW,EAAE,6BAA6B;YAC1C,SAAS,EAAE,CAAC,8BAA8B,CAAC;SAC9C,CAAC;OAEW,qBAAqB,CAEjC;IAAD,4BAAC;CAAA,AAFD,IAEC;AAFY,sDAAqB"}
